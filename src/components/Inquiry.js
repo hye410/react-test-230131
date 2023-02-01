@@ -36,14 +36,16 @@ function Addlist({data,DeleteList}){
 
 function Inquiry({mylist,DeleteList}){
 return(
-  <ul>
-    {mylist.map((data) => 
-    <Addlist
-    key = {data.id}
-    data = {data}
-    DeleteList = {DeleteList}
-    />)}
-  </ul>
+  <div className="inquiry">
+    <ul>
+      {mylist.map((data) => 
+      <Addlist
+      key = {data.id}
+      data = {data}
+      DeleteList = {DeleteList}
+      />)}
+    </ul>
+  </div>
 )
 }
 export default Inquiry;

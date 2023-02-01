@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { BiCaretDown,BiSearch } from "react-icons/bi";
-function Toggle({dropDown}){
+function Toggle({dropDown,onOrderChange}){
   if(dropDown){
     return null
   }
   return(
     <ul>
-      <li>고객명</li>
-      <li>등록일</li>
+      <li onClick={() => onOrderChange('people')}>고객명</li>
+      <li onClick={() => onOrderChange('date')}>등록일</li>
     </ul>
   )
 }
 
-function Search({onTextChange,text}){
+function Search({onTextChange,onOrderChange}){
   const[dropDown,setDropDown] = useState('true');
 
 return(
@@ -28,7 +28,8 @@ return(
        <BiCaretDown />
       </button>
       <Toggle
-      dropDown = {dropDown} />
+      dropDown = {dropDown}
+      onOrderChange = {onOrderChange} />
   </div>
 )
 }

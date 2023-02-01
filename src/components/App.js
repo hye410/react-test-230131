@@ -21,29 +21,31 @@ function App() {
 
   const DeleteList = (btnId) => setMylist(mylist.filter((item) => item.id !== btnId))
 
-  const Findout =    
+  const newList =    
       mylist.filter((item) => {
         return(
           item.people.toLowerCase().includes(text.toLowerCase()) ||
-          item.date.includes(text)
+          item.body.includes(text.toLowerCase()) ||
+          item.title.includes(text.toLowerCase())
         )
-      })      
-    
-  
+      }).sort((a,b) => b[order] - a[order])
 
 
   return (
     <div id="wrap">
       <h1><BiArchive />문의내역</h1>
       <Search
-      text={text}
       onTextChange = {(value) => setText(value)}
+      onOrderChange = {(standard) => setOrder(standard)}
        />
       <div id="content">
-        <AddInquiry />
+        <AddInquiry 
+        addInfo = {(newinfo) => setMylist([...mylist,newinfo])}
+        newId = {mylist.reduce((max,item) => item.id > max? item.id : max,0)} 
+        />
         <Inquiry
-        mylist = {mylist}
-        DeleteList = {DeleteList}
+        mylist = {newList}
+        DeleteList = {DeleteList}        
          />           
 
       </div>
