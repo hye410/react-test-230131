@@ -1,0 +1,60 @@
+#cart{
+  width : 980px;
+  margin : 0 auto;
+  /* background-color: rgb(137, 203, 203);  */
+}
+
+#cart>h3{
+  text-align: center;
+  color : rgb(20, 9, 50);
+  font-size: 35px;
+  margin-bottom : 20px;
+}
+
+.box{
+  width : 980px;
+  margin : 0 auto;
+  /* background-color: wheat; */
+  padding : 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box>figure{
+  width :calc(25% - 1em);
+  border : 3px solid rgb(215, 220, 237);
+  box-sizing: border-box;
+  padding : 10px;
+  margin : 0 0 1em;
+  text-align: center;
+}
+
+.box>figure>img{
+  width : 100%;
+  margin-bottom: 10px;
+}
+
+.box>figure figcaption dt{
+  font-weight: bold;
+  color : blue;
+  margin-bottom : 10px;
+}
+
+.box>figure figcaption dd{
+  margin-bottom : 10px;
+  font-size: 14px;
+}
+
+.box>figure figcaption dd:last-child{
+  margin-bottom : 0;
+}
+
+.box>figure figcaption dd button{
+  padding : 3px 5px;
+  text-align: center;
+  background-color: tomato;
+  color : #fff;
+  border : 1px solid rgb(154, 122, 122);
+}
